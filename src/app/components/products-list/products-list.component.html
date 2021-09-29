@@ -1,0 +1,66 @@
+<div class="list row" style="padding-top: 10px;">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Search by name"
+          [(ngModel)]="name"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchProduct()"
+          >
+            Search
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="input-group-append">
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          (click)="addProduct()"
+        >
+          Add
+        </button>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h4>Products List</h4>
+    <ul class="list-group">
+      <li
+        class="list-group-item"
+        *ngFor="let product of products; let i = index"
+        [class.active]="i == currentIndex"
+        (click)="setActiveProduct(product, i)"
+      >
+        {{ product.name}}
+      </li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div *ngIf="currentProduct.sku">
+      <h4>Product</h4>
+      <div>
+        <label><strong>Name:</strong></label> {{ currentProduct.name }}
+      </div>
+      <div>
+        <label><strong>Price:</strong></label>
+        {{ currentProduct.price }}
+      </div>
+      <div>
+        <label><strong>Brand:</strong></label>
+        {{ currentProduct.brand }}
+      </div>
+      <button routerLink="/products/{{ currentProduct.sku }}" class="btn btn-warning">Edit</button>
+    </div>
+    <div *ngIf="!currentProduct">
+      <br />
+      <p>Please click on a Product...</p>
+    </div>
+  </div>
+</div>
