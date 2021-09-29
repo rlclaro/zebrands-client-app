@@ -1,0 +1,47 @@
+<div style="padding-top: 10px;">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="product.name"
+          name="name"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input
+          class="form-control"
+          id="price"
+          required
+          [(ngModel)]="product.price"
+          name="price"
+          type= "number"
+        />
+      </div>
+
+      <div class="form-group">
+        <label for="brand">Brand</label>
+        <input
+          class="form-control"
+          id="brand"
+          required
+          [(ngModel)]="product.brand"
+          name="brand"
+        />
+      </div>
+      <button (click)="saveProduct()" class="btn btn-success">Add</button>
+    </div>
+
+    <div *ngIf="submitted">
+      <h4>Product was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newProduct()">Add</button>
+    </div>
+  </div>
+  <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#3a26bf" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Wait... </p></ngx-spinner>
+</div>
