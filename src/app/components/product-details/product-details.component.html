@@ -1,0 +1,48 @@
+<div style="padding-top: 10px;">
+  <div *ngIf="currentProduct.sku" class="edit-form">
+    <h4>Product</h4>
+    <form>
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          [(ngModel)]="currentProduct.name"
+          name="name"
+        />
+      </div>
+      <div class="form-group">
+        <label for="price">Price</label>
+        <input
+          type="number"
+          class="form-control"
+          id="price"
+          [(ngModel)]="currentProduct.price"
+          name="price"
+        />
+      </div>
+      <div class="form-group">
+        <label for="brand">Brand</label>
+        <input
+          type="text"
+          class="form-control"
+          id="brand"
+          [(ngModel)]="currentProduct.brand"
+          name="brand"
+        />
+      </div>
+    </form>
+    <button (click)="updateProduct()" style="margin-right: 10px;" class="btn btn-success">Update</button>
+    <button (click)="deleteProduct()" class="btn btn-danger">Delete</button>
+    <p>{{ message }}</p>
+  </div>
+  <div *ngIf="!currentProduct.sku">
+    <br />
+    <p>Cannot access this Product...</p>
+  </div>
+  <ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color = "#3a26bf" type = "ball-atom" [fullScreen] = "true"><p style="color: white" > Wait... </p></ngx-spinner>
+</div>
+
+
+
