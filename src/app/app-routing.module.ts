@@ -4,6 +4,10 @@ import { ProductAddComponent } from './components/product-add/product-add.compon
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { ProductDetailsComponent } from './components/product-details/product-details.component';
 
+import { UserListComponent } from './components/user-list/user-list.component';
+import { UserAddComponent } from './components/user-add/user-add.component';
+import { UserDetailsComponent }  from './components/user-details/user-details.component'
+
 
 import { LoginComponent } from './login/login.component';
 import { ProfileComponent } from './profile/profile.component';
@@ -18,7 +22,9 @@ const routes: Routes = [
 
   { path: 'login', component: LoginComponent },
   { path: 'profile', component: ProfileComponent },
-  { path: 'user', component: BoardUserComponent },
+  { path: 'users', component: UserListComponent },
+  { path: 'addUser', component: UserAddComponent },
+  { path: 'users/:id', component: UserDetailsComponent}
 
 ];
 

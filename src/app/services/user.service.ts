@@ -28,7 +28,7 @@ export class UserService {
   }
 
   get(id: any): Observable<User> {
-    return this.http.get(`${baseUrl}/${id}`, httpOptions);
+    return this.http.get(`${baseUrl}/id/${id}`, httpOptions);
   }
 
   create(data: any): Observable<any> {
@@ -36,7 +36,7 @@ export class UserService {
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put(`${baseUrl}/${id}`, data, httpOptions);
+    return this.http.put(`${baseUrl}`, data, httpOptions);
   }
 
   delete(id: any): Observable<any> {
