@@ -8,7 +8,15 @@ export class User {
   idcreated?: string;
 }
 
-enum Role {
-  Admin,
-  Anonymous
+export enum Role {
+  Admin = 0,
+  Anonymous = 1
+}
+
+
+export class UserAdd {
+  userName?: string;
+  userEmail?: string;
+  userPassword?: string;
+  userRole? : string;
 }

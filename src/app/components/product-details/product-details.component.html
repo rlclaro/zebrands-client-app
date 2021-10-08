@@ -35,6 +35,7 @@
     </form>
     <button (click)="updateProduct()" style="margin-right: 10px;" class="btn btn-success">Update</button>
     <button (click)="deleteProduct()" class="btn btn-danger">Delete</button>
+    <button routerLink="/products" style="float: right;" class="btn btn-outline-secondary">Back</button>
     <p>{{ message }}</p>
   </div>
   <div *ngIf="!currentProduct.sku">
